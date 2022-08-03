@@ -91,14 +91,7 @@ const displayOffer = async () => {
     return response.data
 };
 
-// //Display single housing ad
 
-// const displaySingleHousing = async (id) => {
-
-//     let response = await axios.get(API_URL + id);
-
-//     return response.data
-// };
 
 //Get full housing ads with authorization
 

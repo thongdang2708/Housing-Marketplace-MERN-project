@@ -40,14 +40,18 @@ function ContactLandlordForm() {
 
     useEffect(() => {
 
-        if (user.id.toString() === landlordId.toString()) {
-            toast.error("This landlord cannot send message to himself or herself");
-            navigate(`/category/${housingId}`)
-            //eslint-disabled-next-line
+        if (user !== null) {
+            if (user.id.toString() === landlordId.toString()) {
+                toast.error("This landlord cannot send message to himself or herself");
+                navigate(`/category/${housingId}`)
+                //eslint-disabled-next-line
+            }
         }
 
+     
+
         
-    },[user.id, landlordId]);
+    },[user, landlordId]);
 
     //Set effect to fetch all users
     useEffect(() => {
