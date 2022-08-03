@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+.card-body {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.housename {
+    top: 40%
+}
+
+.houseselection {
+    top: 60%
+}
+
+.houseprice {
+    top: 75%
+}
+
+.map {
+    z-index: 1
+}
