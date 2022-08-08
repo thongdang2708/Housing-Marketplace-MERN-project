@@ -60,7 +60,18 @@ const updateUser = async (inputData, token) => {
 
     let response = await axios.put(API_URL + "update", inputData, config);
 
-    return response.data;
+    let data = response.data;
+
+    let newInputData = {
+        name: data.name,
+        email: data.email,
+        id: data._id,
+        token: token
+    }   
+    if (data) {
+        localStorage.setItem("user", JSON.stringify(newInputData));
+    }
+    return newInputData;
 };
 
 //Update password
