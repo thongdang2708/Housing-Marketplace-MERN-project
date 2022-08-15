@@ -40,7 +40,7 @@ exports.createHouse = asyncHandler(async (req, res, next) => {
 
     
     if (!req.files) {
-        let url = `${req.protocol}://${req.get("host")}/uploads/no-image.svg.png`;
+        let url = `/uploads/no-image.svg.png`;
         let housing = await Housing.create({
             user: user._id,
             name,
@@ -78,7 +78,7 @@ exports.createHouse = asyncHandler(async (req, res, next) => {
                 throw new Error(`Please upload an image file less than ${process.env.FILE_SIZE}`);
             };
 
-            let url = `${req.protocol}://${req.get("host")}/uploads/${item.name}`;
+            let url = `/uploads/${item.name}`;
 
             item.mv(`${process.env.FILE_PATH}/${item.name}`, err => {
                 if (err) {
@@ -123,7 +123,7 @@ exports.createHouse = asyncHandler(async (req, res, next) => {
             throw new Error(`Please upload an image file less than ${process.env.FILE_SIZE}`)
         };
 
-        let url = `${req.protocol}://${req.get("host")}/uploads/${file.name}`;
+        let url = `/uploads/${file.name}`;
 
         file.mv(`${process.env.FILE_PATH}/${file.name}`, async (err) => {
             if (err) {
