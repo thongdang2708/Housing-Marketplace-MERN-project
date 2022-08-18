@@ -31,7 +31,7 @@ app.use("/api/message", messageRoute);
 //Error Handling
 app.use(errorHandler);
 
-if (process.env === "production") {
+if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../frontend/build")));
 
     app.get("*", (req, res) => {
