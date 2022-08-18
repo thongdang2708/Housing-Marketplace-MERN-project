@@ -31,7 +31,13 @@ app.use("/api/message", messageRoute);
 //Error Handling
 app.use(errorHandler);
 
+if (process.env === "production") {
+    app.use(express.static(path.join(__dirname, "../frontend/build")));
 
+    app.get("*", (req, res) => {
+        res.sendFile(__dirname, "../", "frontend", "build", "index.html");
+    });
+}
 //Server listens
 
 app.listen(PORT, () => {
